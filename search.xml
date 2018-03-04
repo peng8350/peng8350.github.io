@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[Ubuntu系统下搭建SS或者SSR翻墙教程]]></title>
+      <url>/2017/10/13/buildss/</url>
+      <content type="html"><![CDATA[<p>本文采用Chrome+switchyomega+shadowsocks实现翻墙。</p>
+<p>工具: Chrome+Shadowsocks<br><a id="more"></a></p>
+<h2 id="Shadowsocks-qt5"><a href="#Shadowsocks-qt5" class="headerlink" title="Shadowsocks-qt5"></a>Shadowsocks-qt5</h2><h3 id="First-one"><a href="#First-one" class="headerlink" title="First one"></a>First one</h3><p>通过命令行直接安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure>
+<h3 id="First-two"><a href="#First-two" class="headerlink" title="First two"></a>First two</h3><p>通过上面的步骤,shadowsocks已经安装好了<br>接下来打开shadowsocks,点连接-&gt;新建-&gt;手动,这里我就不截图了,因为工具本身很难支持<br><img src="/images/buildss-p1.png" alt="p1"></p>
+<p></p><p>如上,服务器地址就是填SS服务器的IP地址,密钥就是它提供的密码,端口就不解析!本地地址一般指向本机,本地端口随意,但是待会要用到的,加密一般都是AES-256-CFB，选HTTPS不选socks5。确定。</p>
+<h3 id="First-three"><a href="#First-three" class="headerlink" title="First three"></a>First three</h3><p></p><p>然后,百度找一个叫switchyomega的插件<br><img src="/images/buildss-p2.png" alt="p2"><br>如图,上面的地址和端口都是对应我们刚才填写的本地地址和本地端口!!<br><img src="/images/buildss-p3.png" alt="p3"><br>选择代理,这样几乎好了,然后你打开google.com应该没问题,假如不行,看一下代理可不可以用,测试方法是点击测试延迟,看一下有没有网速!</p>
+<h2 id="ShadowsocksR"><a href="#ShadowsocksR" class="headerlink" title="ShadowsocksR"></a>ShadowsocksR</h2><p>同样的这种方法,SSR也是和Shadowsocks差不多<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget http://www.djangoz.com/linux_setup_ssr/ssr</div><div class="line">sudo mv ssr /usr/local/bin</div><div class="line">sudo chmod 766 /usr/local/bin/ssr</div><div class="line">ssr install</div><div class="line">ssr config</div></pre></td></tr></table></figure></p>
+<p>ssr config输入完后,这里有一大堆东西<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"></div><div class="line">    &quot;server&quot;: &quot;108.61.119.120&quot;,</div><div class="line">    &quot;server_ipv6&quot;: &quot;::&quot;,</div><div class="line">    &quot;server_port&quot;: 3612,</div><div class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;: 1080,</div><div class="line"></div><div class="line">    &quot;password&quot;: &quot;ntdtv.com&quot;,</div><div class="line">    &quot;method&quot;: &quot;aes-256-cfb&quot;,</div><div class="line">    &quot;protocol&quot;: &quot;auth_sha1_v4&quot;,</div><div class="line">    &quot;protocol_param&quot;: &quot;&quot;,</div><div class="line">    &quot;obfs&quot;: &quot;tls1.2_ticket_auth&quot;,</div><div class="line">    &quot;obfs_param&quot;: &quot;&quot;,</div><div class="line">    &quot;speed_limit_per_con&quot;: 0,</div><div class="line">    &quot;speed_limit_per_user&quot;: 0,</div><div class="line"></div><div class="line">    &quot;additional_ports&quot; : &#123;&#125;, // only works under multi-user mode</div><div class="line">    &quot;additional_ports_only&quot; : false, // only works under multi-user mode</div><div class="line">    &quot;timeout&quot;: 120,</div><div class="line">    &quot;udp_timeout&quot;: 60,</div><div class="line">    &quot;dns_ipv6&quot;: false,</div><div class="line">    &quot;connect_verbose_info&quot;: 0,</div><div class="line">    &quot;redirect&quot;: &quot;&quot;,</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p></p><p> 这些都不用我说了吧,我们要注意的是protocol还有obfs这两个键字,这两个东西代表SSR的协议和混淆,通常情况下都要修改一下的,其他参数看你自己实际情况更改!接着,和上面第三个步骤需要switchyomega这个插件,不过这里区别最大的是,一定要用SOCKS代理,不用HTTP代理,因为SSR默认的本地服务器类型就是SOCKS5!</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> 翻墙 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[分享SS代理地址]]></title>
+      <url>/2017/10/13/sharess/</url>
+      <content type="html"><![CDATA[<h1 id="更新时间-2017年10月22日"><a href="#更新时间-2017年10月22日" class="headerlink" title="更新时间:2017年10月22日"></a>更新时间:2017年10月22日</h1><h2 id="分享来自本人搜集到的ss网站"><a href="#分享来自本人搜集到的ss网站" class="headerlink" title="分享来自本人搜集到的ss网站:"></a>分享来自本人搜集到的ss网站:</h2><a id="more"></a>
+<p><a href="https://hspess.com" target="_blank" rel="external">https://hspess.com/</a>(貌似暂停)<br><a href="https://github.com/Alvin9999/new-pac/wiki/ss%E5%85%8D%E8%B4%B9%E8%B4%A6%E5%8F%B7" target="_blank" rel="external">new_pac</a>(可用)</p>
+<p></p><p>如果还不会翻墙,请看我这个<a href="/2017/10/13/buildss/">教程</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 福利 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 翻墙 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Ubuntu(Linux)系统中搭建Android开发环境遇到的问题收集]]></title>
+      <url>/2017/10/11/ubuntu-IJ/</url>
+      <content type="html"><![CDATA[<p></p><p>首先,本人是经常使用Ubuntu系统,毕竟写Android的绝对都是用这个系统写代码的,也不可避免偶尔重装系统,每次都要重新布置环境,所以有必要收集一下这些问题,以免我下次重装好解决这些问题,同时也有利于很多的Android开发者也遭遇同样的问题。</p>
+<p></p><p>我的linux系统版本是Ubuntu 16.04,然后使用到InllijIdea这个智能IDE,模拟器用到genymotion+VirtualBox。genymotion版本是2.4搭配apt-get那个virtualbox版本。<br><a id="more"></a></p>
+<h1 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h1><p>当我把程序build完后出现了下面的错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error: Gradle: Execution failed for task ‘:mytask’ &gt; A problem occurred starting process &apos;command &apos;/Android/Sdk/build-tools/23.0.1/aapt&apos;&apos;</div></pre></td></tr></table></figure></p>
+<p>它大概意思是说运行aapt的时候出现了一些问题,原因是aapt不能运行在linux 64位系统下,所以才出现这个问题。<br><br>解决方法如下(终端输入):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo -s(输入你的密码)</div><div class="line">apt-get install lib32stdc++6</div><div class="line">apt-get install lib32z1</div></pre></td></tr></table></figure></p>
+<h1 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h1><p>  genymotion2.4打开遇到的坑,其他版本可能没有这个问题,但是我每次首次打开genymotion都会遇到这个问题,我在打开目录后,然后./genymotion,弹出下面错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">genymotion: error while loading shared libraries: libgstapp-0.10.so.0:</div><div class="line">cannot open shared object file: No such file or directory</div></pre></td></tr></table></figure></p>
+<p>这个问题相对的比较简单,就是说我缺少某一些操作库<br><br>解决如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libgstreamer0.10-dev   </div><div class="line">sudo apt-get install libgstreamer-plugins-base0.10-dev</div></pre></td></tr></table></figure></p>
+<p>再次./genymotion就解决了!</p>
+<h1 id="问题3"><a href="#问题3" class="headerlink" title="问题3"></a>问题3</h1><p><img src="/images/ubuntu-p1.png" alt="genymotion problem"><br>genymotion运行模拟器出现这样的问题,这里我直接到官网下载<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">Virtualbox</a>下载最新版本就解决这个问题了,不过网上很多人说这种解决方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/vboxdrc setup</div></pre></td></tr></table></figure></p>
+<p>但是我的Ubuntu系统根本就不存在vboxdrc这个文件夹,这样输入就提示找不到命令。</p>
+<h1 id="问题4"><a href="#问题4" class="headerlink" title="问题4"></a>问题4</h1><p><img src="/images/ubuntu-p2.jpg" alt="build"><br>IDE一直处于build project状态,首先,你要确认你的网络有没有问题,是不是断网了,如果确定没有,那就请看下面。之所以会卡在这种状态,是因为它要下载gradle版本从一个地址上,但是那个地址需要翻墙,所以IDE一直没办法下载下来就卡了。</p>
+<h3 id="解决办法1"><a href="#解决办法1" class="headerlink" title="解决办法1:"></a>解决办法1:</h3><p>   翻墙你懂的,方式很多,有ss、ssr、vpn,只要能翻墙到外国网站都可以,然后IDE-&gt;settings-&gt;http proxy,设置你的代理,重新打开IDE就能下载了</p>
+<h3 id="解决方法2-推荐"><a href="#解决方法2-推荐" class="headerlink" title="解决方法2:(推荐)"></a>解决方法2:(推荐)</h3><p>   首先,到<a href="https://gradle.org/releases/" target="_blank" rel="external">这里</a>下载一个你喜欢的gradle版本<br>   假设我下载好的4.2.1版本放在了 /user/xxxx/下载 这个目录(这里xxxx是用户名)<br>   打开终端如下操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /user/xxxx/下载</div><div class="line">mv gradle-4.2.1-all.zip /user/xxxx/.gradle/wrapper/dists/gradle-4.2.1-all/55gk2rcmfc6p2dg9u9ohc3hw9</div></pre></td></tr></table></figure></p>
+<p>注意了,55gk2rcmfc6p2dg9u9ohc3hw9是随机生成的,我和大家的肯定不一样!假如没有gradle-4.2.1-all这个文件夹的话,你需要随便找一个android poj,修改它的gradle版本为4.2.1,然后进去IDE build一会儿,然后就会生成这个文件夹!</p>
+<h1 id="问题5"><a href="#问题5" class="headerlink" title="问题5"></a>问题5</h1><h2 id="症状一"><a href="#症状一" class="headerlink" title="症状一"></a>症状一</h2><p><img src="/images/ubuntu-p3.png" alt="adb"><br>这个问题也是纠结了很久,adb无法使用或者端口5037被占用。网上几乎都是说什么360,豌豆啥占用了端口,把它杀死就OK了,但我这个并不是占用端口造成的！是因为Ubuntu 64位无法兼容32位的adb!解决如下:</p>
+<h3 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境:"></a>配置环境:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/profile(在最后追加下面两行)</div><div class="line">export PATH=&quot;$PATH:/home/username/sdk/tools&quot;</div><div class="line">export PATH=&quot;$PATH:/home/username/sdk/paltform-tools&quot;</div><div class="line"></div><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
+<h3 id="安装32位兼容库"><a href="#安装32位兼容库" class="headerlink" title="安装32位兼容库"></a>安装32位兼容库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo dpkg --add-architecture i386</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install libncurses5:i386 libstdc++6:i386 zlib1g:i386</div></pre></td></tr></table></figure>
+<h2 id="症状二"><a href="#症状二" class="headerlink" title="症状二"></a>症状二</h2><p>每次重启都会遇到上面这个问题,又是开启不了adb,这类情况呢,是因为我的genymotion里面设定的adb问题,是因为我adb指向了genymotion里面的adb。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p><img src="/images/ubuntu-p5.png" alt="p5"><br>设置genymotion adb 默认是你的adb<br>或许这一步你可以解决这个问题,但是我的话还是没有解决。这里我还遇到了一个坑爹问题,就是我保存后,退出genymotion再次打开genymotion,但是adb仍然默认是genymotion的adb,意思就是我每次设定了一个位置,退出后没有保存设置,这问题实在是genymotion的一个大坑,对linux系统存在bug。我也很无奈,最后我自己是通过复制我本身的adb/tools/platform-tools所有文件覆盖到genymotion/tools文件夹。</p>
+<h1 id="问题6"><a href="#问题6" class="headerlink" title="问题6"></a>问题6</h1><p><img src="/images/ubuntu-p4.png" alt="p6"></p>
+<p></p><p>这种问题是说我工程目录下/.idea/modules/里没有这三个文件,确实我进去我.idea目录看了一下,确实没有modules这个文件夹,顿时我就觉得很奇怪了,modules文件夹不是IDE自动帮我们生成的吗?为什么这次不帮我们自动生成,神奇了,项目是从github clone下来的,但我觉得问题起因不是这个,之前也没事,估计是我系统里面安装了一些不该安装的库吧!!</p>
+<p></p><p>最后我是通过删除了.idea这个文件夹后,重启IDE就自动生成了!</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 问题收集 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Linux </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[首次为开源项目添加Travis Ci的徽章]]></title>
+      <url>/2017/09/29/travis-ci/</url>
+      <content type="html"><![CDATA[<h2 id="Travis-Ci有什么用"><a href="#Travis-Ci有什么用" class="headerlink" title="Travis Ci有什么用?"></a>Travis Ci有什么用?</h2><p>   我经常一直看到一些很强的开源项目里,都带着build passing这个徽章,至于build passing这个如何获得呢,这就需要Travis Ci这个持续集成的东西。Travios CI即持续集成系统。对个人而言，就是让你的代码在提交到远程——这里是GitHub——后，立即自动编译，并且在失败后可以自动给你发邮件的东西。当然，除了编译，还能做自动化测试、自动部署等。对团队或企业而言，这意味着更多的东西，是敏捷开发的一种践行。<br><a id="more"></a></p>
+<h2 id="注册项目"><a href="#注册项目" class="headerlink" title="注册项目"></a>注册项目</h2><p>   登录 <a href="https://travis-ci.org/" target="_blank" rel="external">https://travis-ci.org/</a> 这个网站,首先你必须要有Github帐号,因为待会要获取你的Github里面的项目,点右上角acounnts,然后会要求同步github的项目,接着来到这个界面<br><img src="/images/ci1.png" alt="ci1.ng"><br>   如上图,打开你需要同步的项目,AndroidResideMenu这种状态就处于打开了,你项目每次提交它都会检测了！</p>
+<h2 id="添加-travis-yml"><a href="#添加-travis-yml" class="headerlink" title="添加.travis.yml"></a>添加.travis.yml</h2><p>   在你的项目工程中,新建一个.travis.yml,添加一下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">language: android</div><div class="line">jdk: oraclejdk8</div><div class="line">android:</div><div class="line">  components:</div><div class="line">    - platform-tools</div><div class="line">    - tools</div><div class="line">    - build-tools-23.0.1</div><div class="line">    - android-22</div><div class="line">    - extra-android-support</div><div class="line">    - extra-android-m2repository</div><div class="line"></div><div class="line"></div><div class="line">script:</div><div class="line">    - cd library</div></pre></td></tr></table></figure></p>
+<p>   以上代码,其实我自己也不太明白,但是android-22,build-tools,tools那些大家应该大概猜到什么意思吧,下面那个cd library这个有没有必要实际也没测试过,因为我的开源库是在项目根目录的library,不过之前我没有那东西好像一直是build failing。</p>
+<p>   网上很多的教程,都没有说如何去查看为什么会build failing,因为我自己也是一直build failing,代码编译肯定是没有问题的,出问题的就是.travis.yml配置有问题!!那么你会问:那我怎么知道.travis.yml哪里有问题呢,看图说话！<br><img src="/images/ci2.png" alt="ci2.png"><br>   上面提示好像是我没有那个gradlew文件吧,确实我gradlew没有那个文件。这个页面是在图1点击项目进去后那个页面里的,或许你会觉得我说这个有点多余,但是我相信很多人刚开始都不知道如何解决build failed!</p>
+<h2 id="徽章图标获取"><a href="#徽章图标获取" class="headerlink" title="徽章图标获取"></a>徽章图标获取</h2><p><img src="/images/ci3.png" alt="ci3.ng"><br>点击那个build passing就出来这个界面了,就直接copy markdown的代码!</p>
+<h2 id="提交-travis-yml到远程仓库"><a href="#提交-travis-yml到远程仓库" class="headerlink" title="提交.travis.yml到远程仓库"></a>提交.travis.yml到远程仓库</h2><p>   把代码添加完了,push上去后,它自动会帮你编译,结果无非就是成功和失败。如果失败的话,第一,要确定自己项目有没有问题,第二,就是.travis.yml的配置问题了。<br>   基本上三个步骤,就实现流行的build passing徽章!</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+            <tag> Android </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[记录Hexo+Page坑爹记录]]></title>
+      <url>/2017/09/28/hexo/</url>
+      <content type="html"><![CDATA[<h2 id="安装HEXO坑记录"><a href="#安装HEXO坑记录" class="headerlink" title="安装HEXO坑记录"></a>安装HEXO坑记录</h2><p>搭建过程好像用了3-4天,由于本人对网页方面都不懂,真心累,什么Hexo+Node.js,以前也没有听说过这种东西。话说这种静态博客的模式限制很大,比如我想自定义一个网页什么的。在Ubuntu系统下,在第一个搭建Hexo步骤中:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install npm</div><div class="line">sudo apt-get install node.js</div><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>在hexo安装的过程中，突然会抛出下面的错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">   npm ERR! Failed at the hexo-util@0.6.0 postinstall script &apos;npm run build:highlight&apos;.</div><div class="line">npm ERR! Make sure you have the latest version of node.js and npm installed.</div><div class="line">npm ERR! If you do, this is most likely a problem with the hexo-util package,</div><div class="line">npm ERR! not with npm itself.</div><div class="line">npm ERR! Tell the author that this fails on your system:</div><div class="line">npm ERR!     npm run build:highlight</div><div class="line">npm ERR! You can get information on how to open an issue for this project with:</div><div class="line">npm ERR!     npm bugs hexo-util</div><div class="line">npm ERR! Or if that isn&apos;t available, you can get their info via:</div><div class="line">npm ERR!     npm owner ls hexo-util</div><div class="line">npm ERR! There is likely additional logging output above.</div></pre></td></tr></table></figure></p>
+<p>出现这个问题是因为我的node.js版本太低了,通过命令行apt-get安装版本是4.2.6,最新是6.3多,解决方法是去他官方下载一个,可能是因为写教程的那时版本还不算太旧。</p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>   解决上面的那个问题后,也不是这样就完了的,解压了node.js后放在一个地方后,要设置node.js的环境变量才能生效,这里我也搜了一下百度,至于为什么不google,就是因为本人的英语也不是太好,所以很难找关键字。那么问题来了,我配置环境变量的时候遇到了什么挫折呢?这里,网上我找到最多配置环境变量方法如下<br>首先sudo gedit /etc/profile,在后面下面两行,NODE_HOME指向你nodejs的目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export NODE_HOME=/usr/local/node</div><div class="line">     export PATH=$NODE_HOME/bin:$PATH</div></pre></td></tr></table></figure>
+<p>最后,source /etc/profile</p>
+<p>   这样我就撞到了一个坑,就是确实在普通用户下输入hexo,确实没有问题,但是一旦我切换超级用户,sudo -s后,再输入hexo,它会提示你找不到没有node那个环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/env: node: 没有那个文件或目录</div></pre></td></tr></table></figure>
+<p>   最后,我是通过在/~这个目录下(/home/$user),通过bashrc这个文件来生效环境变量,这可能是我ETC文件夹权限问题吧,重装后没有出现这个问题,那个时候莫名其妙地突然系统文件全部权限都不可写。</p>
+<h2 id="hexo-d坑1"><a href="#hexo-d坑1" class="headerlink" title="hexo d坑1:"></a>hexo d坑1:</h2><p>   博主重装了系统,从github把博客代码clone了下来,修改了一下文章,打算重新post上去,hexo clean-&gt;hexo g这里步骤都没有问题,但是hexo d就遇到了一个很坑的问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Error: error: src refspec HEAD does not match any.</div><div class="line">error: 无法推送一些引用到 &apos;https://github.com/xxxx/xxxx.github.io.git&apos;</div></pre></td></tr></table></figure></p>
+<p>   如上,从错误的意思来看,大概是说我没有什么东西可以提交上去,然后我看了看里面的public文件夹,确实被hexo g生成了,搞了半天原来是要先配置ssh,才可以上传上去,Ubuntu系统下操作如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;yourname&quot;</div><div class="line">git config --global user.email &quot;youremail&quot;</div></pre></td></tr></table></figure></p>
+<p>   接下来,就是要生成ssh key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;youremail&quot;</div></pre></td></tr></table></figure></p>
+<p>   接着再hexo d就没有出现刚刚的问题了。</p>
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束!"></a>结束!</h2>]]></content>
+      
+        <categories>
+            
+            <category> 爬坑 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> HTML+CSS </tag>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+</search>
