@@ -9,7 +9,7 @@
 <meta name="keywords" content="Mac OS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MBR+Clover黑苹果安装教程">
-<meta property="og:url" content="https://peng8350.github.io/2018/03/11/折腾Mac安装教程/index.html">
+<meta property="og:url" content="https://peng8350.github.io/2018/03/11/MBR+Clover黑苹果安装教程/index.html">
 <meta property="og:site_name" content="Jpeng的个人主页">
 <meta property="og:description" content="介绍  这几天为了研究Reaect-native,看不到在IOS上的调试,实在不爽,所以选择安装回以前的苹果系统,本教程使用MBR分区+Clover的方式安装黑苹果,实现与WIN7双系统。基本上95%完美,除了睡眠和外接显示器有一点小问题">
 <meta property="og:locale" content="zh-Hans">
@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://peng8350.github.io/images/mac安装教程/图2.jpg">
 <meta property="og:image" content="https://peng8350.github.io/images/mac安装教程/图3.jpg">
 <meta property="og:image" content="https://peng8350.github.io/images/mac安装教程/图4.jpg">
-<meta property="og:updated_time" content="2018-03-11T14:39:26.000Z">
+<meta property="og:updated_time" content="2018-03-11T14:50:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MBR+Clover黑苹果安装教程">
 <meta name="twitter:description" content="介绍  这几天为了研究Reaect-native,看不到在IOS上的调试,实在不爽,所以选择安装回以前的苹果系统,本教程使用MBR分区+Clover的方式安装黑苹果,实现与WIN7双系统。基本上95%完美,除了睡眠和外接显示器有一点小问题">
@@ -78,9 +78,9 @@
   </div>
 </div>
 
-        <section id="main"><article id="post-折腾Mac安装教程" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-MBR+Clover黑苹果安装教程" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/11/折腾Mac安装教程/" class="article-date">
+    <a href="/2018/03/11/MBR+Clover黑苹果安装教程/" class="article-date">
   <time class="post-time" datetime="2018-03-11T13:00:43.000Z" itemprop="datePublished">
     <span class="post-month">3月</span><br/>
     <span class="post-day">11</span>
@@ -109,7 +109,7 @@
               
   &nbsp; | &nbsp;
   <div class="view-box">
-    <span id="/2018/03/11/折腾Mac安装教程/" class="leancloud_visitors" data-flag-title="MBR+Clover黑苹果安装教程">
+    <span id="/2018/03/11/MBR+Clover黑苹果安装教程/" class="leancloud_visitors" data-flag-title="MBR+Clover黑苹果安装教程">
       &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
     </span>
   </div>
@@ -139,7 +139,7 @@
 <h3 id="MacDrive8-需破解"><a href="#MacDrive8-需破解" class="headerlink" title="MacDrive8(需破解)"></a>MacDrive8(需破解)</h3><p>该工具的作用就是让MAC光驱可以被看到,如果没有这个工具,你安装好镜像或者装好MAC系统后会看不到光盘</p>
 <h3 id="Transmac"><a href="#Transmac" class="headerlink" title="Transmac"></a>Transmac</h3><p>用于安装mac懒人版镜像(也就是安装盘)到U盘</p>
 <h3 id="7-zip"><a href="#7-zip" class="headerlink" title="7-zip"></a>7-zip</h3><p>用于解压Clover bootloader</p>
-<h3 id="CloverISO-4392-bootloader"><a href="#CloverISO-4392-bootloader" class="headerlink" title="CloverISO-4392 bootloader"></a>CloverISO-4392 bootloader</h3><p><a href="https://sourceforge.net/projects/cloverefiboot/files/Bootable_ISO/,版本最好用这个,因为我实际测试的时候不同版本还是有很大区别的,会造成无法进入clover引导界面" target="_blank" rel="external">https://sourceforge.net/projects/cloverefiboot/files/Bootable_ISO/,版本最好用这个,因为我实际测试的时候不同版本还是有很大区别的,会造成无法进入clover引导界面</a></p>
+<h3 id="CloverISO-4392-bootloader"><a href="#CloverISO-4392-bootloader" class="headerlink" title="CloverISO-4392 bootloader"></a>CloverISO-4392 bootloader</h3><p><a href="https://sourceforge.net/projects/cloverefiboot/files/Bootable_ISO/" target="_blank" rel="external">链接</a>,版本最好用这个,因为我实际测试的时候不同版本还是有很大区别的,会造成无法进入clover引导界面</p>
 <h3 id="EasyBcd"><a href="#EasyBcd" class="headerlink" title="EasyBcd"></a>EasyBcd</h3><p>用于安装CloverISO-4392镜像到引导选项</p>
 <h3 id="Kext-wizard"><a href="#Kext-wizard" class="headerlink" title="Kext wizard"></a>Kext wizard</h3><p>MAC下的工具,这个用来安装驱动到s/l/e,并且可以修复缓存</p>
 <h3 id="黑苹果懒人版镜像-CDR"><a href="#黑苹果懒人版镜像-CDR" class="headerlink" title="黑苹果懒人版镜像(CDR)"></a>黑苹果懒人版镜像(CDR)</h3><p>这个是肯定要的,没有安装盘那又如何安装黑苹果呢,是吧。不过选择懒人版的时候,看清楚它的要求,比如有一些它不适用Clover或者用于变色龙引导的,或者只用于GPT。我有一次掉坑就是选错了,造成无法安装的问题。这里,我推荐这个. 链接: <a href="https://pan.baidu.com/s/1gflA8iJ" target="_blank" rel="external">https://pan.baidu.com/s/1gflA8iJ</a> 密码: 6u7e</p>
@@ -173,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://peng8350.github.io/2018/03/11/折腾Mac安装教程/" data-id="cjemwnji2000fhqt7tgo92qku" class="article-share-link">Share</a>
+      <a data-url="https://peng8350.github.io/2018/03/11/MBR+Clover黑苹果安装教程/" data-id="cjemx2hqm0001n7t75todjd7d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac-OS/">Mac OS</a></li></ul>
