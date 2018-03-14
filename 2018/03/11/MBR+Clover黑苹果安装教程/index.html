@@ -48,9 +48,9 @@
     <h2 class="author">Jpeng</h2>
     <h3 class="description">移动Web+Android</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>7</strong><br>文章</div></a>
       <a href="/categories"><div><strong>5</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+      <a href="/tags"><div><strong>10</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -139,17 +139,17 @@
 <h3 id="MacDrive8-需破解"><a href="#MacDrive8-需破解" class="headerlink" title="MacDrive8(需破解)"></a>MacDrive8(需破解)</h3><p>该工具的作用就是让MAC光驱可以被看到,如果没有这个工具,你安装好镜像或者装好MAC系统后会看不到光盘</p>
 <h3 id="Transmac"><a href="#Transmac" class="headerlink" title="Transmac"></a>Transmac</h3><p>用于安装mac懒人版镜像(也就是安装盘)到U盘</p>
 <h3 id="7-zip"><a href="#7-zip" class="headerlink" title="7-zip"></a>7-zip</h3><p>用于解压Clover bootloader</p>
-<h3 id="CloverISO-4392-bootloader"><a href="#CloverISO-4392-bootloader" class="headerlink" title="CloverISO-4392 bootloader"></a>CloverISO-4392 bootloader</h3><p><a href="https://sourceforge.net/projects/cloverefiboot/files/Bootable_ISO/" target="_blank" rel="external">链接</a>,版本最好用这个,因为我实际测试的时候不同版本还是有很大区别的,会造成无法进入clover引导界面</p>
+<h3 id="CloverISO-4392-bootloader"><a href="#CloverISO-4392-bootloader" class="headerlink" title="CloverISO-4392 bootloader"></a>CloverISO-4392 bootloader</h3><p><a href="https://sourceforge.net/projects/cloverefiboot/files/Bootable_ISO/" target="_blank" rel="noopener">链接</a>,版本最好用这个,因为我实际测试的时候不同版本还是有很大区别的,会造成无法进入clover引导界面</p>
 <h3 id="EasyBcd"><a href="#EasyBcd" class="headerlink" title="EasyBcd"></a>EasyBcd</h3><p>用于安装CloverISO-4392镜像到引导选项</p>
 <h3 id="Kext-wizard"><a href="#Kext-wizard" class="headerlink" title="Kext wizard"></a>Kext wizard</h3><p>MAC下的工具,这个用来安装驱动到s/l/e,并且可以修复缓存</p>
-<h3 id="黑苹果懒人版镜像-CDR"><a href="#黑苹果懒人版镜像-CDR" class="headerlink" title="黑苹果懒人版镜像(CDR)"></a>黑苹果懒人版镜像(CDR)</h3><p>这个是肯定要的,没有安装盘那又如何安装黑苹果呢,是吧。不过选择懒人版的时候,看清楚它的要求,比如有一些它不适用Clover或者用于变色龙引导的,或者只用于GPT。我有一次掉坑就是选错了,造成无法安装的问题。这里,我推荐这个. 链接: <a href="https://pan.baidu.com/s/1gflA8iJ" target="_blank" rel="external">https://pan.baidu.com/s/1gflA8iJ</a> 密码: 6u7e</p>
+<h3 id="黑苹果懒人版镜像-CDR"><a href="#黑苹果懒人版镜像-CDR" class="headerlink" title="黑苹果懒人版镜像(CDR)"></a>黑苹果懒人版镜像(CDR)</h3><p>这个是肯定要的,没有安装盘那又如何安装黑苹果呢,是吧。不过选择懒人版的时候,看清楚它的要求,比如有一些它不适用Clover或者用于变色龙引导的,或者只用于GPT。我有一次掉坑就是选错了,造成无法安装的问题。这里,我推荐这个. 链接: <a href="https://pan.baidu.com/s/1gflA8iJ" target="_blank" rel="noopener">https://pan.baidu.com/s/1gflA8iJ</a> 密码: 6u7e</p>
 <h3 id="Ext2Fsd-可选"><a href="#Ext2Fsd-可选" class="headerlink" title="Ext2Fsd(可选)"></a>Ext2Fsd(可选)</h3><p>这个工具作用和上面差不多,也是要查看分区,不过这个通过改盘符来查看分区</p>
 <h3 id="Clover-Configurer-可选"><a href="#Clover-Configurer-可选" class="headerlink" title="Clover Configurer(可选)"></a>Clover Configurer(可选)</h3><p>Mac的工具,用来配置config.plist,快捷</p>
 <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="将懒人版镜像安装到你的U盘"><a href="#将懒人版镜像安装到你的U盘" class="headerlink" title="将懒人版镜像安装到你的U盘"></a>将懒人版镜像安装到你的U盘</h2><p>对于U盘的要求,只要你的U盘有8G大的就可以了,因为CDR本来就6G,安装上去也就6G左右<br><img src="/images/mac安装教程/图1.png" alt="1.ng"><br><br>安装到U盘,要使用到这个工具叫transmac,如上图,我有三个盘,第一个是我的本来笔记本硬盘,第二个是我的SSD,第三个就是我的u盘。右击第三个,选择Restore with Disk Image。<br>然后弹出对话框，选择你刚刚安装好的懒人版镜像(CDR,安装盘镜像),然后就开始安装到你的u盘了,这个时间很长,你要等待20-40分钟左右,就看U盘的读写速度了,这个时候可以去喝杯茶。</p>
 <h2 id="新建一个卷"><a href="#新建一个卷" class="headerlink" title="新建一个卷"></a>新建一个卷</h2><p>这个卷的作用就是真正放Mac系统的盘,过程不多说,就是右击我的电脑,然后点击管理,选择你有多余空间的盘,然后新建,注意新建的时候,要选不要格式化光驱,不要格式化光驱,不要格式化光驱,新建好的盘就是你要待会安装MAC系统进去的盘(Mac盘只有一个)</p>
 <h2 id="设置待安装Mac格式"><a href="#设置待安装Mac格式" class="headerlink" title="设置待安装Mac格式"></a>设置待安装Mac格式</h2><p>通过Win+R cmd,然后输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">diskpart</div><div class="line">//这里要变化,下面意思选择磁盘1(下标从0开始),因为我的SSD位于第二,</div><div class="line">//如果你想知道你的要安装的磁盘在哪里，你可以输入list disk命令</div><div class="line">sel disk 1</div><div class="line">//我的光区在第二个位置</div><div class="line">sel par 1</div><div class="line">//重点下面这句,意思把格式改为af</div><div class="line">set id=AF</div></pre></td></tr></table></figure>
-<h2 id="为安装盘-U盘-添加EFI-删除一些阻碍驱动"><a href="#为安装盘-U盘-添加EFI-删除一些阻碍驱动" class="headerlink" title="为安装盘(U盘)添加EFI,删除一些阻碍驱动"></a>为安装盘(U盘)添加EFI,删除一些阻碍驱动</h2><p></p><p>至于EFI的选择,要根据你的机型实际的情况,每个人的EFI里面的内容会不同,主要的文件有:EFI/CLOVER/config.plist和EFI/CLOVER/kexts,/EFI/CLOVER/ACPI/patched,第一个就是你的clover配置文件,第二个就是放置要加载的驱动,第三个就是DSDT实现一些特别的功能.这个会影响到你进入安装界面是否会五国,可以参考我的EFI,<a href="https://github.com/peng8350/E5-572G-EFI" target="_blank" rel="external">地址</a></p>
+<h2 id="为安装盘-U盘-添加EFI-删除一些阻碍驱动"><a href="#为安装盘-U盘-添加EFI-删除一些阻碍驱动" class="headerlink" title="为安装盘(U盘)添加EFI,删除一些阻碍驱动"></a>为安装盘(U盘)添加EFI,删除一些阻碍驱动</h2><p></p><p>至于EFI的选择,要根据你的机型实际的情况,每个人的EFI里面的内容会不同,主要的文件有:EFI/CLOVER/config.plist和EFI/CLOVER/kexts,/EFI/CLOVER/ACPI/patched,第一个就是你的clover配置文件,第二个就是放置要加载的驱动,第三个就是DSDT实现一些特别的功能.这个会影响到你进入安装界面是否会五国,可以参考我的EFI,<a href="https://github.com/peng8350/E5-572G-EFI" target="_blank" rel="noopener">地址</a></p>
 <p></p><p>第二,删除S/L/E(System/Library/Extensions)不是必须的,但也是必要的当你出现五国(无法进入安装界面)的时候,至于删除什么驱动,这个不是确定的,因为机型不同,要看实际情况,容易造成五国无法进入安装界面的驱动有:NV开头(Nvdia驱动),AppleIntelCpu两个kexts,iobluotooth两个(蓝牙)。</p>
 <h2 id="用easybcd添加CloverISO-4392-bootloader-iso"><a href="#用easybcd添加CloverISO-4392-bootloader-iso" class="headerlink" title="用easybcd添加CloverISO-4392 bootloader.iso"></a>用easybcd添加CloverISO-4392 bootloader.iso</h2><p>添加镜像引导进去clover引导,easybcd添加clover引导镜像过程省略(没截图…)。装好后，可以重启进入选项引导了,选择你刚刚添加的引导选项,不出意外的话就可以进去<br><img src="/images/mac安装教程/图2.jpg" alt="2.png"><br>上图,进去选好你的安装盘按空格,会出现这个,然后boot with injected kexts还有Verbose(-v,就是调试嘛,看日志),别选without,因为要加载kexts里面的fakesmc,没有这个是没办法进入的。<br><img src="/images/mac安装教程/图3.jpg" alt="3.ng"><br>会刷一大堆日志出现，这里你要最注意的是waiting for dsmos…还有dsmos has arrived这两句话很重要,如果dsmos has arrivedz这句话没出来,原因大概是这两个:</p>
 <ul>
@@ -173,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://peng8350.github.io/2018/03/11/MBR+Clover黑苹果安装教程/" data-id="cjemx2hqm0001n7t75todjd7d" class="article-share-link">Share</a>
+      <a data-url="https://peng8350.github.io/2018/03/11/MBR+Clover黑苹果安装教程/" data-id="cjeqsirzo0003mrt7p7gg8s5w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac-OS/">Mac OS</a></li></ul>
@@ -183,6 +183,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/03/14/RN-problem1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ReactNative入坑记-No Bundle Url Present
+        
+      </div>
+    </a>
   
   
     <a href="/2017/10/13/buildss/" id="article-nav-older" class="article-nav-link-wrap">
@@ -245,9 +254,9 @@
     <h2 class="author">Jpeng</h2>
     <h3 class="description">移动Web+Android</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>7</strong><br>文章</div></a>
       <a href="/categories"><div><strong>5</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+      <a href="/tags"><div><strong>10</strong><br>标签</div></a>
     </div>
 
 

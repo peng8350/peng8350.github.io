@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://peng8350.github.io/2018/03/14/RN-problem1/</loc>
+    <lastmod>2018-03-14T07:58:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>ReactNative入坑记-No Bundle Url Present</title>
+        <pubTime>2018-03-14T07:23:43.000Z</pubTime>
+        
+        <tag>ReactNative</tag>
+         
+        <tag>Mac OS</tag>
+         
+         
+           
+             
+              <breadCrumb title="爬坑" url="https://peng8350.github.io/categories/%E7%88%AC%E5%9D%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://peng8350.github.io/2018/03/11/MBR+Clover%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2018-03-11T14:50:52.000Z</lastmod>
     <data>
@@ -23,6 +45,27 @@
     </url>
 
     
+  <url>
+    <loc>https://peng8350.github.io/2017/10/13/buildss/</loc>
+    <lastmod>2018-03-10T08:43:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu系统下搭建SS或者SSR翻墙教程</title>
+        <pubTime>2017-10-13T11:58:10.000Z</pubTime>
+        
+        <tag>Ubuntu</tag>
+         
+        <tag>翻墙</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="https://peng8350.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>https://peng8350.github.io/2017/09/28/hexo/</loc>
@@ -88,6 +131,12 @@
     </url>
 
     
+    
+    
+    
+    
+    
+    
   <url>
     <loc>https://peng8350.github.io/2017/10/11/ubuntu-IJ/</loc>
     <lastmod>2018-03-10T08:43:06.000Z</lastmod>
@@ -111,31 +160,4 @@
     </data>
     </url>
 
-    
-  <url>
-    <loc>https://peng8350.github.io/2017/10/13/buildss/</loc>
-    <lastmod>2018-03-10T08:43:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu系统下搭建SS或者SSR翻墙教程</title>
-        <pubTime>2017-10-13T11:58:10.000Z</pubTime>
-        
-        <tag>Ubuntu</tag>
-         
-        <tag>翻墙</tag>
-         
-         
-           
-             
-              <breadCrumb title="教程" url="https://peng8350.github.io/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-    
-    
 </urlset>
