@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>分享SS代理地址 | Jpeng的个人主页</title>
+  <title>ReactNative入坑记-this指针理解 | Jpeng的个人主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="更新时间:2017年10月22日分享来自本人搜集到的ss网站:">
-<meta name="keywords" content="翻墙">
+  <meta name="description" content="this指针 刚入门ReactNative半个月,在前期学习的过程中,总是对这个this指针的概念不是很清晰和理解,每次调用这个this也要想一想它到底是指向谁?所以,很有必要仔细研究这个this指向。">
+<meta name="keywords" content="Mac OS,ReactNative">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分享SS代理地址">
-<meta property="og:url" content="https://peng8350.github.io/2017/10/13/sharess/index.html">
+<meta property="og:title" content="ReactNative入坑记-this指针理解">
+<meta property="og:url" content="https://peng8350.github.io/2018/03/20/RN-problem2/index.html">
 <meta property="og:site_name" content="Jpeng的个人主页">
-<meta property="og:description" content="更新时间:2017年10月22日分享来自本人搜集到的ss网站:">
+<meta property="og:description" content="this指针 刚入门ReactNative半个月,在前期学习的过程中,总是对这个this指针的概念不是很清晰和理解,每次调用这个this也要想一想它到底是指向谁?所以,很有必要仔细研究这个this指向。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-10T08:43:06.000Z">
+<meta property="og:updated_time" content="2018-03-20T13:30:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分享SS代理地址">
-<meta name="twitter:description" content="更新时间:2017年10月22日分享来自本人搜集到的ss网站:">
+<meta name="twitter:title" content="ReactNative入坑记-this指针理解">
+<meta name="twitter:description" content="this指针 刚入门ReactNative半个月,在前期学习的过程中,总是对这个this指针的概念不是很清晰和理解,每次调用这个this也要想一想它到底是指向谁?所以,很有必要仔细研究这个this指向。">
   
     <link rel="alternate" href="/atom.xml" title="Jpeng的个人主页" type="application/atom+xml">
   
@@ -73,12 +73,12 @@
   </div>
 </div>
 
-        <section id="main"><article id="post-sharess" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-RN-problem2" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/13/sharess/" class="article-date">
-  <time class="post-time" datetime="2017-10-13T11:51:47.000Z" itemprop="datePublished">
-    <span class="post-month">10月</span><br/>
-    <span class="post-day">13</span>
+    <a href="/2018/03/20/RN-problem2/" class="article-date">
+  <time class="post-time" datetime="2018-03-20T12:17:03.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">20</span>
   </time>
 </a>
    
@@ -90,21 +90,21 @@
         
   
     <h1 class="article-title" itemprop="name">
-      分享SS代理地址
+      ReactNative入坑记-this指针理解
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/福利/">福利</a>
+    <a class="article-category-link" href="/categories/分析/">分析</a>
   </div>
 
           
               
   &nbsp; | &nbsp;
   <div class="view-box">
-    <span id="/2017/10/13/sharess/" class="leancloud_visitors" data-flag-title="分享SS代理地址">
+    <span id="/2018/03/20/RN-problem2/" class="leancloud_visitors" data-flag-title="ReactNative入坑记-this指针理解">
       &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
     </span>
   </div>
@@ -116,17 +116,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="更新时间-2017年10月22日"><a href="#更新时间-2017年10月22日" class="headerlink" title="更新时间:2017年10月22日"></a>更新时间:2017年10月22日</h1><h2 id="分享来自本人搜集到的ss网站"><a href="#分享来自本人搜集到的ss网站" class="headerlink" title="分享来自本人搜集到的ss网站:"></a>分享来自本人搜集到的ss网站:</h2><a id="more"></a>
-<p><a href="https://hspess.com" target="_blank" rel="noopener">https://hspess.com/</a>(貌似暂停)<br><a href="https://github.com/Alvin9999/new-pac/wiki/ss%E5%85%8D%E8%B4%B9%E8%B4%A6%E5%8F%B7" target="_blank" rel="noopener">new_pac</a>(可用)</p>
-<p></p><p>如果还不会翻墙,请看我这个<a href="/2017/10/13/buildss/">教程</a></p>
-
+        <h1 id="this指针"><a href="#this指针" class="headerlink" title="this指针"></a>this指针</h1><p> </p><p>刚入门ReactNative半个月,在前期学习的过程中,总是对这个this指针的概念不是很清晰和理解,每次调用这个this也要想一想它到底是指向谁?所以,很有必要仔细研究这个this指向。<br> <a id="more"></a></p>
+<h2 id="What-is-“this”"><a href="#What-is-“this”" class="headerlink" title="What is “this”?"></a>What is “this”?</h2><p> </p><p>众所周知,在Java面向对象语言里,它就是指向当前类的对象,Object-C,C++和JAVA都是指向当前的类对象,但是Javascript里面的this指针和其他语言的this不是一个概念。简单一句话来说,JavaScript里面的this就是指向调用它的那个对象,或许这么一说,你还是有点模糊。不过往下看!</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="例子一"><a href="#例子一" class="headerlink" title="例子一"></a>例子一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"> constructor()&#123;</div><div class="line">       super()</div><div class="line"></div><div class="line">       this.state = &#123;</div><div class="line">    </div><div class="line">           aaa: &apos;we&apos;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">ButtonClick()&#123;</div><div class="line">	this.setState(&#123;...&#125;)</div><div class="line">	//alert(this.state.visiable)</div><div class="line">&#125;</div><div class="line"></div><div class="line">render()&#123;</div><div class="line">	return(</div><div class="line">		&lt;View&gt;....</div><div class="line">			&lt;Button onPress=&#123;this.ButtonClick&#125; title=&#123;....&#125;/&gt;</div><div class="line">		&lt;/View&gt;</div><div class="line">	)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p></p><p>比如,我想实现一个功能,就是点击按钮隐藏某个组件,试图去利用回调函数来改变当前组件的state,最后报错,”setState is not a function”,大概就是说没有这个方法的意思吧,也尝试alert输出sate,也是报错underfined。当时,对this不理解所犯下的一个错误,原因很简单,因为this压根就不是指向当前类对象。</p>
+<h3 id="例子二"><a href="#例子二" class="headerlink" title="例子二"></a>例子二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//类一</div><div class="line">class Person1&#123;</div><div class="line">    constructor()&#123;</div><div class="line">        this.age = 18</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    printAge()&#123;</div><div class="line">        alert(this.age)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//类二</div><div class="line">class Person2&#123;</div><div class="line">    constructor()&#123;</div><div class="line">        this.age = 15</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    printAge()&#123;</div><div class="line">        alert(this.age)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">		let p1 = new Person1()</div><div class="line">      let p2 = new Person2()</div><div class="line">      p1.printAge()//输出18</div><div class="line">      var method = p1.printAge</div><div class="line">      method.call(p2)//输出15</div></pre></td></tr></table></figure>
+<p></p><p>如上,这里我有两个类,里面都有一个共同属性age,当他们作为构造函数使用new关键字时,默认指向当前类对象。p1.printAge()利用p1来调用printAge方法输出18,看得出来this指向的就是p1,但通过引用p1的printAge方法来交给p2这个对象调用的时候,输出就是p2里面的age里的值,证明this指针指向的就是调用它的那个对象,p1调用了它,就是指p1,p2调用了它,就是p2</p>
+<h2 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h2><h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>() =&gt; {},使用这种箭头函数时,this指针和普通函数this指针的指向不同,在箭头函数里,this是和其他面向对象语言的this指向一样,都是指向当前类的对象,不会因为调用对象而改变指向。</p>
+<h3 id="call和apply"><a href="#call和apply" class="headerlink" title="call和apply"></a>call和apply</h3><p>上面已经演示了call改变this的作用,所以这两个方法可以改变调用这个方法的对象,也就是说会改变方法里的this</p>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p> 如果在一个函数前面加上new关键字来调用，那么就会创建一个连接到该函数的prototype成员的新对象，同时，this会被绑定到这个新对象上。这种情况下，这个函数就可以成为此对象的构造函数。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function obj()&#123;  </div><div class="line">  this.name = &quot;obj&quot;;  </div><div class="line">&#125;  </div><div class="line">var o = new obj();  </div><div class="line">alert(o.name); //&quot;obj&quot;</div></pre></td></tr></table></figure>
+<p>使用new创建对象o时，在构造函数中this指向了o，因此o的name属性被赋值为“obj”。</p>
+<h1 id="总结完毕"><a href="#总结完毕" class="headerlink" title="总结完毕!"></a>总结完毕!</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://peng8350.github.io/2017/10/13/sharess/" data-id="cjezp781s000gqnt7nvpskt8c" class="article-share-link">Share</a>
+      <a data-url="https://peng8350.github.io/2018/03/20/RN-problem2/" data-id="cjezp781m0009qnt74gf9zkvt" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻墙/">翻墙</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac-OS/">Mac OS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ReactNative/">ReactNative</a></li></ul>
 
     </footer>
   </div>
@@ -134,19 +142,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/10/13/buildss/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Ubuntu系统下搭建SS或者SSR翻墙教程
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/11/ubuntu-IJ/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/14/RN-problem1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Ubuntu(Linux)系统中搭建Android开发环境遇到的问题收集</div>
+      <div class="article-nav-title">ReactNative入坑记-No Bundle Url Present</div>
     </a>
   
 </nav>

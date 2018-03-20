@@ -3,36 +3,55 @@
   
     
     <entry>
-      <title><![CDATA[ReactNative入坑记-No Bundle Url Present]]></title>
-      <url>/2018/03/14/RN-problem1/</url>
-      <content type="html"><![CDATA[<h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>  当我有时想要重新打包运行IOS的时候,偶尔会出现这个坑爹的问题<br>  <a id="more"></a><br>  </p><p><img src="/images/爬坑/图1.png" alt=""><br>  </p><p>如图,上面这个奇葩错误在我入门搭建环境的时候就碰到了,那时我的解决方案:</p>
-<ul>
-<li>重新启动电脑 </li>
-<li>关闭模拟器,关闭所有终端,重新react-native run-ios</li>
-</ul>
-<p></p><p>而今天连续好几次react-native run-ios都出现这个问题,因为我为了调试fetch 那个API在IOS的异常,尝试多次修改info.plist并重新打包无果！实在不能忍,放掉当前问题,去百度stackoverflow解决这个问题先。<br>  </p><p>经过一番的网上找答案,绝大多人都是给出这个解决方案:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line">npm install</div><div class="line"></div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
-<p>  </p><p>然而,This is Nothing to do with it。(无果)<br>  </p><p>最后,偶尔找到一个博客是说<b><font color="red">shadowsocks</font></b>的问题,确实!这个才是真正的答案,虽然不知道为什么<b><font color="red">shadowsocks</font></b>翻墙会阻碍IOS重新生成。但关闭<b><font color="red">shadowsocks</font></b>的代理之后,重新react-native run-ios却解决了这个问题</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>  <img src="/images/爬坑/图2.png" alt=""></p>
-<ul>
-<li>关闭<b><font color="red">shadowsocks</font></b>代理</li>
-<li>切换全局模式为代理模式</li>
-</ul>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><img src="http://blog.csdn.net/suyie007/article/details/70768410" alt="http://blog.csdn.net/suyie007/article/details/70768410"></p>
-]]></content>
+      <title><![CDATA[ReactNative入坑记-this指针理解]]></title>
+      <url>/2018/03/20/RN-problem2/</url>
+      <content type="html"><![CDATA[<h1 id="this指针"><a href="#this指针" class="headerlink" title="this指针"></a>this指针</h1><p> </p><p>刚入门ReactNative半个月,在前期学习的过程中,总是对这个this指针的概念不是很清晰和理解,每次调用这个this也要想一想它到底是指向谁?所以,很有必要仔细研究这个this指向。<br> <a id="more"></a></p>
+<h2 id="What-is-“this”"><a href="#What-is-“this”" class="headerlink" title="What is “this”?"></a>What is “this”?</h2><p> </p><p>众所周知,在Java面向对象语言里,它就是指向当前类的对象,Object-C,C++和JAVA都是指向当前的类对象,但是Javascript里面的this指针和其他语言的this不是一个概念。简单一句话来说,JavaScript里面的this就是指向调用它的那个对象,或许这么一说,你还是有点模糊。不过往下看!</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="例子一"><a href="#例子一" class="headerlink" title="例子一"></a>例子一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"> constructor()&#123;</div><div class="line">       super()</div><div class="line"></div><div class="line">       this.state = &#123;</div><div class="line">    </div><div class="line">           aaa: &apos;we&apos;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">ButtonClick()&#123;</div><div class="line">	this.setState(&#123;...&#125;)</div><div class="line">	//alert(this.state.visiable)</div><div class="line">&#125;</div><div class="line"></div><div class="line">render()&#123;</div><div class="line">	return(</div><div class="line">		&lt;View&gt;....</div><div class="line">			&lt;Button onPress=&#123;this.ButtonClick&#125; title=&#123;....&#125;/&gt;</div><div class="line">		&lt;/View&gt;</div><div class="line">	)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p></p><p>比如,我想实现一个功能,就是点击按钮隐藏某个组件,试图去利用回调函数来改变当前组件的state,最后报错,”setState is not a function”,大概就是说没有这个方法的意思吧,也尝试alert输出sate,也是报错underfined。当时,对this不理解所犯下的一个错误,原因很简单,因为this压根就不是指向当前类对象。</p>
+<h3 id="例子二"><a href="#例子二" class="headerlink" title="例子二"></a>例子二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//类一</div><div class="line">class Person1&#123;</div><div class="line">    constructor()&#123;</div><div class="line">        this.age = 18</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    printAge()&#123;</div><div class="line">        alert(this.age)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//类二</div><div class="line">class Person2&#123;</div><div class="line">    constructor()&#123;</div><div class="line">        this.age = 15</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    printAge()&#123;</div><div class="line">        alert(this.age)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">		let p1 = new Person1()</div><div class="line">      let p2 = new Person2()</div><div class="line">      p1.printAge()//输出18</div><div class="line">      var method = p1.printAge</div><div class="line">      method.call(p2)//输出15</div></pre></td></tr></table></figure>
+<p></p><p>如上,这里我有两个类,里面都有一个共同属性age,当他们作为构造函数使用new关键字时,默认指向当前类对象。p1.printAge()利用p1来调用printAge方法输出18,看得出来this指向的就是p1,但通过引用p1的printAge方法来交给p2这个对象调用的时候,输出就是p2里面的age里的值,证明this指针指向的就是调用它的那个对象,p1调用了它,就是指p1,p2调用了它,就是p2</p>
+<h2 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h2><h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>() =&gt; {},使用这种箭头函数时,this指针和普通函数this指针的指向不同,在箭头函数里,this是和其他面向对象语言的this指向一样,都是指向当前类的对象,不会因为调用对象而改变指向。</p>
+<h3 id="call和apply"><a href="#call和apply" class="headerlink" title="call和apply"></a>call和apply</h3><p>上面已经演示了call改变this的作用,所以这两个方法可以改变调用这个方法的对象,也就是说会改变方法里的this</p>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p> 如果在一个函数前面加上new关键字来调用，那么就会创建一个连接到该函数的prototype成员的新对象，同时，this会被绑定到这个新对象上。这种情况下，这个函数就可以成为此对象的构造函数。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function obj()&#123;  </div><div class="line">  this.name = &quot;obj&quot;;  </div><div class="line">&#125;  </div><div class="line">var o = new obj();  </div><div class="line">alert(o.name); //&quot;obj&quot;</div></pre></td></tr></table></figure>
+<p>使用new创建对象o时，在构造函数中this指向了o，因此o的name属性被赋值为“obj”。</p>
+<h1 id="总结完毕"><a href="#总结完毕" class="headerlink" title="总结完毕!"></a>总结完毕!</h1>]]></content>
       
         <categories>
             
-            <category> 爬坑 </category>
+            <category> 分析 </category>
             
         </categories>
         
         
         <tags>
             
+            <tag> Mac OS </tag>
+            
             <tag> ReactNative </tag>
             
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ReactNative入坑记-No Bundle Url Present]]></title>
+      <url>/2018/03/14/RN-problem1/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> 分析 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
             <tag> Mac OS </tag>
+            
+            <tag> ReactNative </tag>
             
         </tags>
         
