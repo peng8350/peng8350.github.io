@@ -27,9 +27,9 @@
         
         <tags>
             
-            <tag> Mac OS </tag>
-            
             <tag> ReactNative </tag>
+            
+            <tag> Mac OS </tag>
             
         </tags>
         
@@ -38,20 +38,38 @@
     <entry>
       <title><![CDATA[ReactNative入坑记-No Bundle Url Present]]></title>
       <url>/2018/03/14/RN-problem1/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>当我有时想要重新打包运行IOS的时候,偶尔会出现这个坑爹的问题<br><a id="more"></a></p>
+<p></p><p><img src="/images/爬坑/图1.png" alt=""></p>
+<p></p><p>如图,上面这个奇葩错误在我入门搭建环境的时候就碰到了,那时我的解决方案:</p>
+<ul>
+<li>重新启动电脑</li>
+<li>关闭模拟器,关闭所有终端,重新react-native run-ios</li>
+</ul>
+<p></p><p>而今天连续好几次react-native run-ios都出现这个问题,因为我为了调试fetch 那个API在IOS的异常,尝试多次修改info.plist并重新打包无果！实在不能忍,放掉当前问题,去百度stackoverflow解决这个问题先。</p>
+<p></p><p>经过一番的网上找答案,绝大多人都是给出这个解决方案:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">npm install</div><div class="line"></div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
+<p></p><p>然而,This is Nothing to do with it。(无果)</p>
+<p></p><p>最后,偶尔找到一个博客是说<b><font color="red">shadowsocks</font></b>的问题,确实!这个才是真正的答案,虽然不知道为什么<b><font color="red">shadowsocks</font></b>翻墙会阻碍IOS重新生成。但关闭<b><font color="red">shadowsocks</font></b>的代理之后,重新react-native run-ios却解决了这个问题</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p><img src="/images/爬坑/图2.png" alt=""></p>
+<ul>
+<li>关闭<b><font color="red">shadowsocks</font></b>代理</li>
+<li>切换全局模式为代理模式</li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><img src="http://blog.csdn.net/suyie007/article/details/70768410" alt="http://blog.csdn.net/suyie007/article/details/70768410"></p>
+]]></content>
       
         <categories>
             
-            <category> 分析 </category>
+            <category> 爬坑 </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> Mac OS </tag>
-            
             <tag> ReactNative </tag>
+            
+            <tag> Mac OS </tag>
             
         </tags>
         
@@ -215,9 +233,9 @@
         
         <tags>
             
-            <tag> Android </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> Android </tag>
             
             <tag> Java </tag>
             
@@ -246,9 +264,9 @@
         
         <tags>
             
-            <tag> Markdown </tag>
-            
             <tag> Android </tag>
+            
+            <tag> Markdown </tag>
             
         </tags>
         
