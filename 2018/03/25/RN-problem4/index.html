@@ -3,18 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mot-clé: ReactNative | Jpeng的个人主页</title>
+  <title>ReactNative入坑记-调试奇葩错误集合 | Jpeng的个人主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="移动Web+Android">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jpeng的个人主页">
-<meta property="og:url" content="https://peng8350.github.io/tags/ReactNative/index.html">
+  <meta name="description" content="调试运行错误集合错误一">
+<meta name="keywords" content="Mac OS,ReactNative">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ReactNative入坑记-调试奇葩错误集合">
+<meta property="og:url" content="https://peng8350.github.io/2018/03/25/RN-problem4/index.html">
 <meta property="og:site_name" content="Jpeng的个人主页">
-<meta property="og:description" content="移动Web+Android">
+<meta property="og:description" content="调试运行错误集合错误一">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://peng8350.github.io/images/爬坑/图3.png">
+<meta property="og:updated_time" content="2018-03-25T15:31:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jpeng的个人主页">
-<meta name="twitter:description" content="移动Web+Android">
+<meta name="twitter:title" content="ReactNative入坑记-调试奇葩错误集合">
+<meta name="twitter:description" content="调试运行错误集合错误一">
+<meta name="twitter:image" content="https://peng8350.github.io/images/爬坑/图3.png">
   
     <link rel="alternate" href="/atom.xml" title="Jpeng的个人主页" type="application/atom+xml">
   
@@ -71,109 +75,90 @@
   </div>
 </div>
 
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap animated rubberBand">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/25/RN-problem4/" class="archive-article-date">
+        <section id="main"><article id="post-RN-problem4" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/25/RN-problem4/" class="article-date">
   <time class="post-time" datetime="2018-03-25T15:11:24.000Z" itemprop="datePublished">
     <span class="post-month">3月</span><br/>
     <span class="post-day">25</span>
   </time>
 </a>
-      
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/25/RN-problem4/">ReactNative入坑记-调试奇葩错误集合</a>
+    <h1 class="article-title" itemprop="name">
+      ReactNative入坑记-调试奇葩错误集合
     </h1>
   
 
-    </header>
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/爬坑/">爬坑</a>
   </div>
-</article>
-  
+
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2018/03/25/RN-problem4/" class="leancloud_visitors" data-flag-title="ReactNative入坑记-调试奇葩错误集合">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/22/RN-problem3/" class="archive-article-date">
-  <time class="post-time" datetime="2018-03-22T15:28:33.000Z" itemprop="datePublished">
-    <span class="post-month">3月</span><br/>
-    <span class="post-day">22</span>
-  </time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/22/RN-problem3/">ReactNative入坑记-初始化项目遇到的错误</a>
-    </h1>
-  
+        <h1 id="调试运行错误集合"><a href="#调试运行错误集合" class="headerlink" title="调试运行错误集合"></a>调试运行错误集合</h1><h2 id="错误一"><a href="#错误一" class="headerlink" title="错误一"></a>错误一</h2><a id="more"></a>
+<p><img src="/images/爬坑/图3.png" alt="错误一"></p>
+<p></p><p>如图,貌似是想表达因为什么原因不能把一个View添加进入结点,我英文很差的别吐槽。这个错误很奇怪,确实很奇怪,为什么呢?因为我IOS里跑的话，完全没有这个问题的,而Android就出现了这个问题。</p>
+<p></p><p>我找了半天代码都没发现什么问题,经过大量google和stackoverflow,搜索到的信息里面很多人都说因为return 里面有注释语句的原因,导致你出现这个调试错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">render() &#123;</div><div class="line"></div><div class="line">  return (</div><div class="line">    &lt;View style=&#123;styles.container&#125;&gt;</div><div class="line">      &lt;TabBar navigation=&#123;this.props.navigation&#125;/&gt;&gt;</div><div class="line">    &lt;/View&gt;</div><div class="line">  );</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>经过本人的大量仔细调查,我并没有在render方法里写注释,不过唯一让我起疑的就是我昨天刚刚封装的组件里出了问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">render() &#123;</div><div class="line"> </div><div class="line">   return (</div><div class="line"></div><div class="line">       &lt;TabBar navigation=&#123;this.props.navigation&#125;/&gt;&gt;</div><div class="line"> </div><div class="line">   );</div><div class="line">   </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>果然不出我所料,尝试把View根节点删去就没事了,虽然解决了这个问题,但是还是很疑惑,为什么不能让我在外面多添加一个View呢?是它内部人员写的BUG还是固定为了性能让我们去掉多余的View?这个问题有待以后探讨…</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/20/RN-problem2/" class="archive-article-date">
-  <time class="post-time" datetime="2018-03-20T12:17:03.000Z" itemprop="datePublished">
-    <span class="post-month">3月</span><br/>
-    <span class="post-day">20</span>
-  </time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/20/RN-problem2/">ReactNative入坑记-this指针理解</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/14/RN-problem1/" class="archive-article-date">
-  <time class="post-time" datetime="2018-03-14T07:23:43.000Z" itemprop="datePublished">
-    <span class="post-month">3月</span><br/>
-    <span class="post-day">14</span>
-  </time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://peng8350.github.io/2018/03/25/RN-problem4/" data-id="cjf6yks1n000b0096j07drety" class="article-share-link">Partager</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/14/RN-problem1/">ReactNative入坑记-No Bundle Url Present</a>
-    </h1>
-  
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac-OS/">Mac OS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ReactNative/">ReactNative</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/03/22/RN-problem3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">ReactNative入坑记-初始化项目遇到的错误</div>
+    </a>
   
+</nav>
 
+  
+</article>
+
+
+
+
+  <div id="comments" class="comments">
+    <div id="uyan_frame"></div>
+  </div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2145547"></script>
 </section>
         
           <aside id="sidebar">

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://peng8350.github.io/"/>
-  <updated>2018-03-22T16:00:41.000Z</updated>
+  <updated>2018-03-25T15:31:51.000Z</updated>
   <id>https://peng8350.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ReactNative入坑记-调试奇葩错误集合</title>
+    <link href="https://peng8350.github.io/2018/03/25/RN-problem4/"/>
+    <id>https://peng8350.github.io/2018/03/25/RN-problem4/</id>
+    <published>2018-03-25T15:11:24.000Z</published>
+    <updated>2018-03-25T15:31:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="调试运行错误集合"><a href="#调试运行错误集合" class="headerlink" title="调试运行错误集合"></a>调试运行错误集合</h1><h2 id="错误一"><a href="#错误一" class="headerlink" title="错误一"></a>错误一</h2><a id="more"></a><p><img src="/images/爬坑/图3.png" alt="错误一"></p><p></p><p>如图,貌似是想表达因为什么原因不能把一个View添加进入结点,我英文很差的别吐槽。这个错误很奇怪,确实很奇怪,为什么呢?因为我IOS里跑的话，完全没有这个问题的,而Android就出现了这个问题。</p><p></p><p>我找了半天代码都没发现什么问题,经过大量google和stackoverflow,搜索到的信息里面很多人都说因为return 里面有注释语句的原因,导致你出现这个调试错误</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">render() &#123;</div><div class="line"></div><div class="line">  return (</div><div class="line">    &lt;View style=&#123;styles.container&#125;&gt;</div><div class="line">      &lt;TabBar navigation=&#123;this.props.navigation&#125;/&gt;&gt;</div><div class="line">    &lt;/View&gt;</div><div class="line">  );</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure><p>经过本人的大量仔细调查,我并没有在render方法里写注释,不过唯一让我起疑的就是我昨天刚刚封装的组件里出了问题。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">render() &#123;</div><div class="line"> </div><div class="line">   return (</div><div class="line"></div><div class="line">       &lt;TabBar navigation=&#123;this.props.navigation&#125;/&gt;&gt;</div><div class="line"> </div><div class="line">   );</div><div class="line">   </div><div class="line"> &#125;</div></pre></td></tr></table></figure><p>果然不出我所料,尝试把View根节点删去就没事了,虽然解决了这个问题,但是还是很疑惑,为什么不能让我在外面多添加一个View呢?是它内部人员写的BUG还是固定为了性能让我们去掉多余的View?这个问题有待以后探讨…</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;调试运行错误集合&quot;&gt;&lt;a href=&quot;#调试运行错误集合&quot; class=&quot;headerlink&quot; title=&quot;调试运行错误集合&quot;&gt;&lt;/a&gt;调试运行错误集合&lt;/h1&gt;&lt;h2 id=&quot;错误一&quot;&gt;&lt;a href=&quot;#错误一&quot; class=&quot;headerlink&quot; title=&quot;错误一&quot;&gt;&lt;/a&gt;错误一&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="爬坑" scheme="https://peng8350.github.io/categories/%E7%88%AC%E5%9D%91/"/>
+    
+    
+      <category term="Mac OS" scheme="https://peng8350.github.io/tags/Mac-OS/"/>
+    
+      <category term="ReactNative" scheme="https://peng8350.github.io/tags/ReactNative/"/>
+    
+  </entry>
   
   <entry>
     <title>ReactNative入坑记-初始化项目遇到的错误</title>
