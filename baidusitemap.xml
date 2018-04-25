@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://peng8350.github.io/2018/04/25/flutter-http/</loc>
+    <lastmod>2018-04-25T15:19:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>flutter-获取网络数据两种方法</title>
+        <pubTime>2018-04-25T15:04:17.000Z</pubTime>
+        
+        <tag>Flutter</tag>
+         
+        <tag>Dart</tag>
+         
+        <tag>跨平台</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="https://peng8350.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://peng8350.github.io/2018/04/24/flutter-p1/</loc>
     <lastmod>2018-04-24T14:45:48.000Z</lastmod>
     <data>
@@ -176,7 +200,6 @@
     </url>
 
     
-    
   <url>
     <loc>https://peng8350.github.io/2017/09/28/hexo/</loc>
     <lastmod>2018-03-10T08:43:06.000Z</lastmod>
@@ -199,29 +222,6 @@
     </url>
 
     
-  <url>
-    <loc>https://peng8350.github.io/2017/10/11/ubuntu-IJ/</loc>
-    <lastmod>2018-03-10T08:43:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu(Linux)系统中搭建Android开发环境遇到的问题收集</title>
-        <pubTime>2017-10-11T14:43:43.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>Android</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="问题收集" url="https://peng8350.github.io/categories/%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://peng8350.github.io/2017/10/13/sharess/</loc>
@@ -244,21 +244,23 @@
 
     
   <url>
-    <loc>https://peng8350.github.io/2017/09/29/travis-ci/</loc>
+    <loc>https://peng8350.github.io/2017/10/11/ubuntu-IJ/</loc>
     <lastmod>2018-03-10T08:43:06.000Z</lastmod>
     <data>
         <display>
-        <title>首次为开源项目添加Travis Ci的徽章</title>
-        <pubTime>2017-09-29T08:09:44.000Z</pubTime>
+        <title>Ubuntu(Linux)系统中搭建Android开发环境遇到的问题收集</title>
+        <pubTime>2017-10-11T14:43:43.000Z</pubTime>
         
         <tag>Android</tag>
          
-        <tag>Markdown</tag>
+        <tag>Linux</tag>
+         
+        <tag>Java</tag>
          
          
            
              
-              <breadCrumb title="教程" url="https://peng8350.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+              <breadCrumb title="问题收集" url="https://peng8350.github.io/categories/%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/"/>
           
         </display>
     </data>
@@ -291,4 +293,26 @@
     
     
     
+    
+  <url>
+    <loc>https://peng8350.github.io/2017/09/29/travis-ci/</loc>
+    <lastmod>2018-03-10T08:43:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>首次为开源项目添加Travis Ci的徽章</title>
+        <pubTime>2017-09-29T08:09:44.000Z</pubTime>
+        
+        <tag>Markdown</tag>
+         
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="https://peng8350.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
 </urlset>
