@@ -7,8 +7,8 @@
       <url>/2018/06/03/flutter_gank/</url>
       <content type="html"><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>首先这个干货客户端是基于flutter+dart语言来编写的,Android+iOS双端都支持。写完这个项目之际,我感觉我应该不会再碰flutter这个东西了，其实我也就研究flutter一个半月而已,刚开始我是被它的性能吸引进去的。至于为什么不会再碰了,详情可以见我项目的README中存在的问题吧。</p>
 <a id="more"></a>
-<h2 id="App效果图"><a href="#App效果图" class="headerlink" title="App效果图"></a>App效果图</h2><p><img src="/images/flutter/flutter_gank1.gif" alt=""><br><img src="/images/flutter/flutter_gank2.gif" alt=""><br><img src="/images/flutter/flutter_gank3.gif" alt=""></p>
-<h2 id="实现什么功能"><a href="#实现什么功能" class="headerlink" title="实现什么功能?"></a>实现什么功能?</h2><ul>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="/images/flutter/flutter_gank1.gif" alt=""><br><img src="/images/flutter/flutter_gank2.gif" alt=""><br><img src="/images/flutter/flutter_gank3.gif" alt=""></p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
 <li style="list-style: none"><input type="checkbox" checked> 下拉刷新捕获新的数据和上拉数据加载以前的数据</li>
 <li style="list-style: none"><input type="checkbox" checked> 图片半瀑布流</li>
 <li style="list-style: none"><input type="checkbox" checked> 可以基于关键字搜索干货</li>
@@ -20,8 +20,7 @@
 <li style="list-style: none"><input type="checkbox"> 反馈</li>
 <li style="list-style: none"><input type="checkbox"> 双击退出程序</li>
 </ul>
-<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p><a href="https://github.com/peng8350/flutter_gank" target="_blank" rel="noopener">https://github.com/peng8350/flutter_gank</a></p>
-<h2 id="给flutter的贡献"><a href="#给flutter的贡献" class="headerlink" title="给flutter的贡献"></a>给flutter的贡献</h2><ul>
+<h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><ul>
 <li><a href="https://github.com/peng8350/flutter_pulltorefresh" target="_blank" rel="noopener">https://github.com/peng8350/flutter_pulltorefresh</a>,上拉下拉组件,刷新和加载指示器由你选择,经测试,没多大的问题</li>
 <li><a href="https://github.com/peng8350/flutter_residemenu" target="_blank" rel="noopener">https://github.com/peng8350/flutter_residemenu</a>,侧滑菜单组件,不用说都知道了吧,就是仿着AndroidResideMenu写的</li>
 </ul>
