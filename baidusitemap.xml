@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://peng8350.github.io/2018/06/03/flutter_gank/</loc>
-    <lastmod>2018-06-03T11:44:29.000Z</lastmod>
+    <lastmod>2018-06-04T03:18:15.000Z</lastmod>
     <data>
         <display>
         <title>这应该算是flutter中优秀的Gank客户端吧!</title>
@@ -131,9 +131,9 @@
         <title>基于React Native的一个干货客户端</title>
         <pubTime>2018-04-23T10:14:31.000Z</pubTime>
         
-        <tag>Mac OS</tag>
-         
         <tag>ReactNative</tag>
+         
+        <tag>Mac OS</tag>
          
          
            
@@ -150,9 +150,9 @@
         <title>ReactNative入坑记-this指针理解</title>
         <pubTime>2018-03-20T12:17:03.000Z</pubTime>
         
-        <tag>Mac OS</tag>
-         
         <tag>ReactNative</tag>
+         
+        <tag>Mac OS</tag>
          
          
            
@@ -172,9 +172,9 @@
         <title>ReactNative官方bug->onEndReached被多次回调在ios上</title>
         <pubTime>2018-04-11T12:11:24.000Z</pubTime>
         
-        <tag>Mac OS</tag>
-         
         <tag>ReactNative</tag>
+         
+        <tag>Mac OS</tag>
          
          
            
@@ -194,9 +194,9 @@
         <title>ReactNative入坑记-调试奇葩错误集合</title>
         <pubTime>2018-03-25T15:11:24.000Z</pubTime>
         
-        <tag>Mac OS</tag>
-         
         <tag>ReactNative</tag>
+         
+        <tag>Mac OS</tag>
          
          
            
@@ -216,9 +216,9 @@
         <title>ReactNative入坑记-初始化项目遇到的错误</title>
         <pubTime>2018-03-22T15:28:33.000Z</pubTime>
         
-        <tag>Mac OS</tag>
-         
         <tag>ReactNative</tag>
+         
+        <tag>Mac OS</tag>
          
          
            
@@ -238,9 +238,9 @@
         <title>ReactNative入坑记-No Bundle Url Present</title>
         <pubTime>2018-03-14T07:23:43.000Z</pubTime>
         
-        <tag>Mac OS</tag>
-         
         <tag>ReactNative</tag>
+         
+        <tag>Mac OS</tag>
          
          
            
@@ -272,29 +272,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>https://peng8350.github.io/2017/10/13/buildss/</loc>
-    <lastmod>2018-03-10T08:43:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu系统下搭建SS或者SSR翻墙教程</title>
-        <pubTime>2017-10-13T11:58:10.000Z</pubTime>
-        
-        <tag>Ubuntu</tag>
-         
-        <tag>翻墙</tag>
-         
-         
-           
-             
-              <breadCrumb title="教程" url="https://peng8350.github.io/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>https://peng8350.github.io/2017/10/13/sharess/</loc>
     <lastmod>2018-03-10T08:43:06.000Z</lastmod>
@@ -316,16 +293,16 @@
 
     
   <url>
-    <loc>https://peng8350.github.io/2017/09/29/travis-ci/</loc>
+    <loc>https://peng8350.github.io/2017/10/13/buildss/</loc>
     <lastmod>2018-03-10T08:43:06.000Z</lastmod>
     <data>
         <display>
-        <title>首次为开源项目添加Travis Ci的徽章</title>
-        <pubTime>2017-09-29T08:09:44.000Z</pubTime>
+        <title>Ubuntu系统下搭建SS或者SSR翻墙教程</title>
+        <pubTime>2017-10-13T11:58:10.000Z</pubTime>
         
-        <tag>Markdown</tag>
+        <tag>Ubuntu</tag>
          
-        <tag>Android</tag>
+        <tag>翻墙</tag>
          
          
            
@@ -362,6 +339,28 @@
 
     
   <url>
+    <loc>https://peng8350.github.io/2017/09/29/travis-ci/</loc>
+    <lastmod>2018-03-10T08:43:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>首次为开源项目添加Travis Ci的徽章</title>
+        <pubTime>2017-09-29T08:09:44.000Z</pubTime>
+        
+        <tag>Markdown</tag>
+         
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="https://peng8350.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://peng8350.github.io/2017/09/28/hexo/</loc>
     <lastmod>2018-03-10T08:43:06.000Z</lastmod>
     <data>
@@ -382,6 +381,7 @@
     </data>
     </url>
 
+    
     
     
     
